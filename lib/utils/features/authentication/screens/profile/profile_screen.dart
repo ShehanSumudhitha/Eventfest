@@ -1,4 +1,11 @@
+import 'package:eventmainapp/utils/features/authentication/screens/profile/aboutscreen.dart';
+import 'package:eventmainapp/utils/features/authentication/screens/profile/editprofile.screen.dart';
+import 'package:eventmainapp/utils/features/authentication/screens/profile/helpsupportscreen.dart';
+import 'package:eventmainapp/utils/features/authentication/screens/profile/paymentoptionscreen.dart';
+import 'package:eventmainapp/utils/features/authentication/screens/profile/usermanagement_screen.dart';
+import 'package:eventmainapp/utils/features/authentication/screens/signup_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -9,7 +16,10 @@ class ProfileScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-            onPressed: () {}, icon: Icon(LineAwesomeIcons.angle_left)),
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: Icon(LineAwesomeIcons.angle_left)),
         title: Text(
           "Profile",
           style: Theme.of(context).primaryTextTheme.headlineLarge,
@@ -42,32 +52,59 @@ class ProfileScreen extends StatelessWidget {
               Divider(),
               SizedBox(height: 20),
               ProfileMenuWidget(
-                  title: "Settings",
+                  title: "Help and Support",
+                  //Contact us
+                  //File a report
+                  //Like Chat
                   icon: LineAwesomeIcons.cog,
-                  onPress: () {}),
+                  iconColor: Colors.pink.shade600,
+                  onPress: () {
+                    Get.to(const HelpSupportScreen());
+                  }),
               ProfileMenuWidget(
-                  title: "Billing Details",
+                  title: "Payment Methods",
+                  //Visa Card Details
+                  //Cash
+                  iconColor: Colors.pink.shade600,
                   icon: LineAwesomeIcons.wallet,
-                  onPress: () {}),
+                  onPress: () {
+                    Get.to(const PaymentOptionScreen());
+                  }),
               ProfileMenuWidget(
                   title: "User Management",
+                  //enable notificATIONS
+                  //Language
+                  iconColor: Colors.pink.shade600,
                   icon: LineAwesomeIcons.user_check,
-                  onPress: () {}),
+                  onPress: () {
+                    Get.to(const UserManagementScreen());
+                  }),
               ProfileMenuWidget(
-                  title: "Information",
+                  title: "About",
+                  //The app
+                  //Privacy
+                  //Terms and Conditions
+                  iconColor: Colors.pink.shade600,
                   icon: LineAwesomeIcons.info,
-                  onPress: () {}),
+                  onPress: () {
+                    Get.to(const AboutAppPage());
+                  }),
               ProfileMenuWidget(
                   title: "Logout",
+                  iconColor: Colors.pink.shade600,
                   icon: LineAwesomeIcons.alternate_sign_out,
                   textColor: Colors.red,
                   endIcon: false,
-                  onPress: () {}),
+                  onPress: () {
+                    Get.to(const SignUpPage());
+                  }),
 
               //Edit Profile Button
               SizedBox(height: 20),
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Get.to(const EditProfileScreen());
+                },
                 child: Text(
                   "Edit Profile",
                   style: TextStyle(color: Colors.white),
@@ -89,6 +126,7 @@ class ProfileScreen extends StatelessWidget {
 class ProfileMenuWidget extends StatelessWidget {
   const ProfileMenuWidget({
     super.key,
+    required this.iconColor,
     required this.title,
     required this.icon,
     required this.onPress,
@@ -101,6 +139,7 @@ class ProfileMenuWidget extends StatelessWidget {
   final VoidCallback onPress;
   final bool endIcon;
   final Color? textColor;
+  final Color? iconColor;
 
   @override
   Widget build(BuildContext context) {
@@ -111,7 +150,7 @@ class ProfileMenuWidget extends StatelessWidget {
         height: 40,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(100),
-          color: Colors.pink.shade600,
+          color: iconColor,
         ),
         child: Icon(icon, color: Colors.white),
       ),
