@@ -1,9 +1,10 @@
 import 'package:eventmainapp/common/widgets/splash_screen.dart';
+import 'package:eventmainapp/utils/features/authentication/screens/signup_screen.dart';
 import 'package:eventmainapp/utils/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-void main() {
+void main() async {
   runApp(const MyApp());
 }
 
@@ -17,7 +18,11 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: EAppTheme.mainTheme,
-      home: const SplashScreen(),
+      home: const SplashScreen(
+        child: SplashScreen(
+          child: SignUpPage(),
+        ),
+      ),
     );
   }
 }

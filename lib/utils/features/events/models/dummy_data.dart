@@ -16,6 +16,15 @@ class EventListData {
       this.reviews = 100,
       this.perNight = 100});
 
+  toJson() {
+    return {
+      "Image": imagePath,
+      "Event Name": title,
+      "Distance": distance,
+      "Rating": rating,
+    };
+  }
+
   static List<EventListData> list = [
     EventListData(
       imagePath: "assets/images/events/hotel_1.jpg",

@@ -45,6 +45,12 @@ class _SearchScreenState extends State<SearchScreen>
     );
   }
 
+  @override
+  void dispose() {
+    animationController?.dispose();
+    super.dispose();
+  }
+
   Widget _buildBody() {
     return Column(
       children: [

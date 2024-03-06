@@ -1,5 +1,8 @@
 import 'package:eventmainapp/utils/constants/square_tile.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+import '../../../../common/widgets/navigation_menu.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -83,7 +86,9 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                       SizedBox(height: 32),
                       ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Get.to(() => NavigationMenu());
+                        },
                         child: Text(
                           "Login",
                           style: TextStyle(

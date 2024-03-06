@@ -1,7 +1,7 @@
 import 'package:eventmainapp/home.dart';
-import 'package:eventmainapp/utils/features/authentication/screens/profile/helpsupportscreen.dart';
 import 'package:eventmainapp/utils/features/authentication/screens/profile/profile_screen.dart';
 import 'package:eventmainapp/utils/features/events/screens/search_screen.dart';
+import 'package:eventmainapp/utils/features/tickets/ticket_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
@@ -43,7 +43,7 @@ class NavigationController extends GetxController {
   final screens = [
     const HomeScreen(),
     const SearchScreen(),
-    HelpSupportScreen(),
+    const TicketScreen(),
     const ProfileScreen(),
   ];
 }

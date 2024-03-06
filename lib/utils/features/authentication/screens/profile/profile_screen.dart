@@ -59,7 +59,7 @@ class ProfileScreen extends StatelessWidget {
                   icon: LineAwesomeIcons.cog,
                   iconColor: Colors.pink.shade600,
                   onPress: () {
-                    Get.to(const HelpSupportScreen());
+                    Get.to(() => const HelpSupportScreen());
                   }),
               ProfileMenuWidget(
                   title: "Payment Methods",
@@ -68,7 +68,7 @@ class ProfileScreen extends StatelessWidget {
                   iconColor: Colors.pink.shade600,
                   icon: LineAwesomeIcons.wallet,
                   onPress: () {
-                    Get.to(const PaymentOptionScreen());
+                    Get.to(() => const PaymentOptionScreen());
                   }),
               ProfileMenuWidget(
                   title: "User Management",
@@ -77,7 +77,7 @@ class ProfileScreen extends StatelessWidget {
                   iconColor: Colors.pink.shade600,
                   icon: LineAwesomeIcons.user_check,
                   onPress: () {
-                    Get.to(const UserManagementScreen());
+                    Get.to(() => const UserManagementScreen());
                   }),
               ProfileMenuWidget(
                   title: "About",
@@ -87,7 +87,7 @@ class ProfileScreen extends StatelessWidget {
                   iconColor: Colors.pink.shade600,
                   icon: LineAwesomeIcons.info,
                   onPress: () {
-                    Get.to(const AboutAppPage());
+                    Get.to(() => const AboutAppPage());
                   }),
               ProfileMenuWidget(
                   title: "Logout",
@@ -96,7 +96,7 @@ class ProfileScreen extends StatelessWidget {
                   textColor: Colors.red,
                   endIcon: false,
                   onPress: () {
-                    Get.to(const SignUpPage());
+                    Get.to(() => const SignUpPage());
                   }),
 
               //Edit Profile Button
