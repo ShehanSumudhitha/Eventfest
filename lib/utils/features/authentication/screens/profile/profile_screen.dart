@@ -8,11 +8,14 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 
+import '../../controllers/auth_controller.dart';
+
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final AuthController _authController = Get.find<AuthController>();
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
@@ -25,7 +28,11 @@ class ProfileScreen extends StatelessWidget {
           style: Theme.of(context).primaryTextTheme.headlineLarge,
         ),
         actions: [
-          IconButton(onPressed: () {}, icon: Icon(LineAwesomeIcons.moon))
+          IconButton(
+              onPressed: () {
+                _authController.signOut();
+              },
+              icon: const Icon(LineAwesomeIcons.alternate_sign_out))
         ],
         centerTitle: true,
       ),
@@ -96,7 +103,7 @@ class ProfileScreen extends StatelessWidget {
                   textColor: Colors.red,
                   endIcon: false,
                   onPress: () {
-                    Get.to(() => const SignUpPage());
+                    Get.to(() => SignUpPage());
                   }),
 
               //Edit Profile Button

@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "38811476356",
-    "project_id": "eventfest-bb899",
-    "storage_bucket": "eventfest-bb899.appspot.com"
+    "project_number": "846806930942",
+    "project_id": "eventfest-part-one",
+    "storage_bucket": "eventfest-part-one.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:38811476356:android:0f17c1fc86f8adf73bfdd1",
+        "mobilesdk_app_id": "1:846806930942:android:b04af7bdf4046f1b6d1caf",
         "android_client_info": {
           "package_name": "com.example.eventmainapp"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyDl3dlJ2JgSHbc_rKmEBgpetVMXS7rd3zI"
+          "current_key": "AIzaSyCGXc-m4tX9d0i5_bCPzllvmLgjB6tkKb4"
         }
       ],
       "services": {

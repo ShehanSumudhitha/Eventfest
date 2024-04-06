@@ -8,7 +8,7 @@ class EventListData {
   int perNight;
 
   EventListData(
-      {this.imagePath = '',
+      {this.imagePath = "",
       this.title = "",
       this.sub = "",
       this.distance = 1,
@@ -28,7 +28,7 @@ class EventListData {
   static List<EventListData> list = [
     EventListData(
       imagePath: "assets/images/events/hotel_1.jpg",
-      title: 'Grand Royal Hotel',
+      title: 'Grand Royal StandUp',
       sub: 'Phnom Penh, Cambodia',
       distance: 2.0,
       reviews: 80,
@@ -37,7 +37,7 @@ class EventListData {
     ),
     EventListData(
       imagePath: "assets/images/events/hotel_1.jpg",
-      title: 'Morok Denyor Hotel',
+      title: 'Morok Denyor Buffet',
       sub: 'Kompong Thom, Cambodia',
       distance: 2.0,
       reviews: 20,
@@ -46,7 +46,7 @@ class EventListData {
     ),
     EventListData(
       imagePath: "assets/images/events/hotel_3.jpeg",
-      title: 'Sopheap Neary Hotel',
+      title: 'Sopheap Night Fever',
       sub: 'London, Cambodia',
       distance: 2.0,
       reviews: 100,
@@ -55,7 +55,7 @@ class EventListData {
     ),
     EventListData(
       imagePath: "assets/images/events/hotel_4.jpeg",
-      title: 'Bongkalaw hotel Koh Rong',
+      title: 'Bongkalaw Event Koh Rong',
       sub: 'Koh Rong, Cambodia',
       distance: 2.0,
       reviews: 80,
@@ -64,7 +64,7 @@ class EventListData {
     ),
     EventListData(
       imagePath: "assets/images/events/hotel_5.jpeg",
-      title: 'The Internal Build Hotel',
+      title: 'The Internal Build Cafe',
       sub: 'Phnom Penh, Cambodia',
       distance: 2.0,
       reviews: 80,

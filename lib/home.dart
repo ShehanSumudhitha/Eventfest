@@ -3,6 +3,9 @@ import 'package:eventmainapp/utils/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
+import 'common/widgets/navigation_menu.dart';
+import 'utils/constants/event_carousal.dart';
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -12,16 +15,16 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   final myitems = [
-    Image.asset('assets/images/image_01.jpeg'),
-    Image.asset('assets/images/image_02.jpg'),
-    Image.asset('assets/images/image_03.jpg'),
-    Image.asset('assets/images/image_04.jpg'),
-    Image.asset('assets/images/image_05.jpg'),
-    // EventCarousalCard(),
-    // EventCarousalCard(),
-    // EventCarousalCard(),
-    // EventCarousalCard(),
-    // EventCarousalCard(),
+    // Image.asset('assets/images/image_01.jpeg'),
+    // Image.asset('assets/images/image_02.jpg'),
+    // Image.asset('assets/images/image_03.jpg'),
+    // Image.asset('assets/images/image_04.jpg'),
+    // Image.asset('assets/images/image_05.jpg'),
+    EventCarousalCard(),
+    EventCarousalCard(),
+    EventCarousalCard(),
+    EventCarousalCard(),
+    EventCarousalCard(),
   ];
 
   int myCurrentIndex = 0;
@@ -31,6 +34,7 @@ class _HomeScreenState extends State<HomeScreen> {
       debugShowCheckedModeBanner: false,
       theme: EAppTheme.mainTheme,
       home: Scaffold(
+        bottomNavigationBar: const NavigationMenu(),
         body: SingleChildScrollView(
           child: Column(
             children: [
@@ -93,7 +97,7 @@ class _HomeScreenState extends State<HomeScreen> {
               CarouselSlider(
                 options: CarouselOptions(
                     autoPlay: true,
-                    height: 200,
+                    height: 267,
                     autoPlayCurve: Curves.fastOutSlowIn,
                     autoPlayAnimationDuration: Duration(milliseconds: 400),
                     autoPlayInterval: const Duration(seconds: 3),

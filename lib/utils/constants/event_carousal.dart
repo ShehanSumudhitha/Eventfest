@@ -12,7 +12,7 @@ class EventCarousalCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(left: 25, right: 25, top: 8, bottom: 16),
+      padding: EdgeInsets.only(left: 25, right: 25, top: 10, bottom: 20),
       child: Container(
         decoration:
             BoxDecoration(borderRadius: BorderRadius.circular(16), boxShadow: [
@@ -30,23 +30,25 @@ class EventCarousalCard extends StatelessWidget {
               AspectRatio(
                 aspectRatio: 2,
                 child: Image.asset(
-                  item!.imagePath,
+                  "assets/images/events/hotel_1.jpg",
                   fit: BoxFit.cover,
                 ),
               ),
               Container(
+                height: 100,
                 color: Colors.black,
                 child: Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Expanded(
                         child: Container(
-                          padding: EdgeInsets.only(left: 16, bottom: 8, top: 8),
+                          padding:
+                              EdgeInsets.only(left: 16, bottom: 16, top: 8),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                item!.title,
+                                "MAin Title",
                                 textAlign: TextAlign.left,
                                 style: TextStyle(
                                     fontWeight: FontWeight.w600, fontSize: 22),
@@ -55,7 +57,7 @@ class EventCarousalCard extends StatelessWidget {
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
                                   Text(
-                                    item!.sub,
+                                    "Subtitle",
                                     style: TextStyle(fontSize: 14),
                                   ),
                                   SizedBox(width: 5),
@@ -66,7 +68,7 @@ class EventCarousalCard extends StatelessWidget {
                                   ),
                                   Expanded(
                                     child: Text(
-                                      "${item!.distance} km to city",
+                                      "10 km to city",
                                       style: TextStyle(fontSize: 13),
                                       overflow: TextOverflow.ellipsis,
                                     ),
@@ -77,7 +79,7 @@ class EventCarousalCard extends StatelessWidget {
                                 padding: EdgeInsets.only(top: 5),
                                 child: Row(children: [
                                   RatingBar(
-                                      initialRating: item!.rating,
+                                      initialRating: 3,
                                       direction: Axis.horizontal,
                                       allowHalfRating: true,
                                       itemCount: 5,
@@ -102,7 +104,7 @@ class EventCarousalCard extends StatelessWidget {
                                       itemPadding: EdgeInsets.zero,
                                       onRatingUpdate: (value) {}),
                                   Text(
-                                    "${item!.reviews} Reviews",
+                                    "98 Reviews",
                                     style: TextStyle(fontSize: 13),
                                     overflow: TextOverflow.ellipsis,
                                   ),
@@ -121,7 +123,7 @@ class EventCarousalCard extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Text(
-                                "\$${item!.perNight}",
+                                "\$23",
                                 style: TextStyle(
                                     fontWeight: FontWeight.w600, fontSize: 22),
                               ),

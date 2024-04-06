@@ -24,9 +24,9 @@ class NavigationMenu extends StatelessWidget {
           onDestinationSelected: (index) =>
               controller.selectedIndex.value = index,
           destinations: [
-            NavigationDestination(icon: Icon(Iconsax.home), label: "Home"),
             NavigationDestination(
                 icon: Icon(Iconsax.search_normal_1), label: "Search"),
+            NavigationDestination(icon: Icon(Iconsax.home), label: "Home"),
             NavigationDestination(icon: Icon(Iconsax.ticket), label: "Tickets"),
             NavigationDestination(icon: Icon(Iconsax.user), label: "Profile"),
           ],

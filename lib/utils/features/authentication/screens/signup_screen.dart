@@ -1,15 +1,20 @@
-import 'package:eventmainapp/common/widgets/navigation_menu.dart';
+import 'package:eventmainapp/utils/features/authentication/controllers/auth_controller.dart';
+import 'package:eventmainapp/utils/features/authentication/screens/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class SignUpPage extends StatefulWidget {
-  const SignUpPage({super.key});
+  SignUpPage({super.key});
 
   @override
   State<SignUpPage> createState() => _SignUpPageState();
 }
 
 class _SignUpPageState extends State<SignUpPage> {
+  final TextEditingController txtEmail = TextEditingController();
+  final TextEditingController txtPassword = TextEditingController();
+  final AuthController _controller = Get.put(AuthController());
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -67,8 +72,9 @@ class _SignUpPageState extends State<SignUpPage> {
                         ),
                       ),
                       SizedBox(height: 22),
-                      const TextField(
+                      TextField(
                         keyboardType: TextInputType.emailAddress,
+                        controller: txtEmail,
                         decoration: const InputDecoration(
                           labelText: 'Email',
                           labelStyle: TextStyle(
@@ -85,6 +91,7 @@ class _SignUpPageState extends State<SignUpPage> {
                       TextField(
                         obscureText: true,
                         keyboardType: TextInputType.text,
+                        controller: txtPassword,
                         decoration: const InputDecoration(
                           labelText: 'Password',
                           labelStyle: TextStyle(
@@ -101,7 +108,7 @@ class _SignUpPageState extends State<SignUpPage> {
                       TextField(
                         obscureText: true,
                         keyboardType: TextInputType.text,
-                        decoration: const InputDecoration(
+                        decoration: InputDecoration(
                           labelText: 'Confirm Password',
                           labelStyle: TextStyle(
                             fontSize: 14,
@@ -115,9 +122,14 @@ class _SignUpPageState extends State<SignUpPage> {
                       ),
                       SizedBox(height: 32),
                       ElevatedButton(
-                        onPressed: () => Get.to(() => NavigationMenu()),
+                        onPressed: () {
+                          _controller.SignUp(
+                            email: txtEmail.text.trim(),
+                            password: txtPassword.text.trim(),
+                          );
+                        },
                         child: Text(
-                          "Login",
+                          "Register",
                           style: TextStyle(
                             color: Color.fromARGB(255, 255, 255, 242),
                           ),
@@ -139,10 +151,13 @@ class _SignUpPageState extends State<SignUpPage> {
                           color: Colors.white, fontWeight: FontWeight.bold),
                     ),
                     SizedBox(width: 4),
-                    Text(
-                      "Login now",
-                      style: TextStyle(
-                          color: Colors.blue, fontWeight: FontWeight.bold),
+                    TextButton(
+                      onPressed: () {
+                        Get.off(() => LoginPage());
+                      },
+                      child: Text("Login now",
+                          style: TextStyle(
+                              color: Colors.blue, fontWeight: FontWeight.bold)),
                     ),
                   ],
                 ),

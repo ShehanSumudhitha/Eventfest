@@ -1,8 +1,8 @@
 import 'package:eventmainapp/utils/constants/square_tile.dart';
+import 'package:eventmainapp/utils/features/authentication/controllers/auth_controller.dart';
+import 'package:eventmainapp/utils/features/authentication/screens/signup_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
-import '../../../../common/widgets/navigation_menu.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -12,6 +12,11 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  final TextEditingController txtEmail = TextEditingController();
+  final TextEditingController txtPassword = TextEditingController();
+
+  final AuthController _authController = Get.put(AuthController());
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -56,6 +61,7 @@ class _LoginPageState extends State<LoginPage> {
                     children: [
                       TextField(
                         keyboardType: TextInputType.emailAddress,
+                        controller: txtEmail,
                         decoration: const InputDecoration(
                           labelText: 'User Email',
                           labelStyle: TextStyle(
@@ -72,6 +78,7 @@ class _LoginPageState extends State<LoginPage> {
                       TextField(
                         obscureText: true,
                         keyboardType: TextInputType.text,
+                        controller: txtPassword,
                         decoration: const InputDecoration(
                           labelText: 'User Password',
                           labelStyle: TextStyle(
@@ -87,7 +94,9 @@ class _LoginPageState extends State<LoginPage> {
                       SizedBox(height: 32),
                       ElevatedButton(
                         onPressed: () {
-                          Get.to(() => NavigationMenu());
+                          _authController.signIn(
+                              email: txtEmail.text.trim(),
+                              password: txtPassword.text.trim());
                         },
                         child: Text(
                           "Login",
@@ -155,10 +164,13 @@ class _LoginPageState extends State<LoginPage> {
                           color: Colors.white, fontWeight: FontWeight.bold),
                     ),
                     SizedBox(width: 4),
-                    Text(
-                      "Register Now",
-                      style: TextStyle(
-                          color: Colors.blue, fontWeight: FontWeight.bold),
+                    TextButton(
+                      onPressed: () {
+                        Get.off(() => SignUpPage());
+                      },
+                      child: Text("Register now",
+                          style: TextStyle(
+                              color: Colors.blue, fontWeight: FontWeight.bold)),
                     ),
                   ],
                 ),
